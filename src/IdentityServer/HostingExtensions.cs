@@ -11,7 +11,6 @@ internal static class HostingExtensions
     {
         builder.Services.AddRazorPages();
 
-        var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
         const string connectionString1 = @"Data Source=172.16.16.140;Initial Catalog=ConfigurationDbContext;Persist Security Info=True;User ID=DotNetTeam;Password=Salam@321;TrustServerCertificate=True";
         const string connectionString2 = @"Data Source=172.16.16.140;Initial Catalog=PersistedGrantDbContext;Persist Security Info=True;User ID=DotNetTeam;Password=Salam@321;TrustServerCertificate=True";
 
