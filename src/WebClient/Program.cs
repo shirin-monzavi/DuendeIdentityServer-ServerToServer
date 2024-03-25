@@ -25,12 +25,13 @@ builder.Services.AddAuthentication(options =>
     options.Scope.Add("api1");
     options.Scope.Add("offline_access");
     options.Scope.Add("verification");
+    options.Scope.Add("color");
+
     options.ClaimActions.MapJsonKey("Email_Verified", "email_verified");
+    options.ClaimActions.MapUniqueJsonKey("favorite_color", "favorite_color");
 
     options.MapInboundClaims = false; // Don't rename claim types
-
     options.SaveTokens = true;
-
     options.GetClaimsFromUserInfoEndpoint = true;
 });
 
