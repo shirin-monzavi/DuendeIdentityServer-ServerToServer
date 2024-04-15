@@ -62,7 +62,7 @@ public static class Config
                         // where to redirect to after logout
                         PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
 
-                         AllowOfflineAccess = true,
+                         AllowOfflineAccess = false,
 
                         AllowedScopes =
                         {
@@ -70,8 +70,26 @@ public static class Config
                             IdentityServerConstants.StandardScopes.Profile,
                             "verification",
                             "api1"
-                        }
+                        },
+                        AccessTokenLifetime=20
                    }
 
         };
+
+
+    public static IEnumerable<ApiResource> ApiResources =>
+    new ApiResource[]
+    {
+        new ApiResource("WeatherForeCast","WeatherForecast Api")
+        {
+            Scopes = { "api1" },
+
+            // additional claims to put into access token
+            UserClaims =
+            {
+                "color",
+            },
+            Properties = { new KeyValuePair<string, string>("name", "shirin") }
+        }
+    };
 }

@@ -1,6 +1,7 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
 using IdentityModel;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityServerAspNetIdentity;
 
@@ -27,7 +28,34 @@ public static class Config
         new ApiScope[]
         {
             new ApiScope(name: "api1", displayName: "My API")
+            {
+
+                UserClaims={ "favorite_color" },
+                Properties={ new KeyValuePair<string, string>("name", "shirin")}
+            },
+
         };
+
+    public static IEnumerable<ApiResource> ApiResources =>
+    new ApiResource[]
+    {
+        new ApiResource("WeatherForeCast","WeatherForecast Api")
+        {
+            Scopes = { "api1" },
+
+            // additional claims to put into access token
+            UserClaims =
+            {
+                "color",
+            },
+            Properties = { new KeyValuePair<string, string>("name", "shirin") },
+            ShowInDiscoveryDocument=true,
+            AllowedAccessTokenSigningAlgorithms={ SecurityAlgorithms.RsaSsaPssSha256 },
+            ApiSecrets={ new Secret("secret".Sha256())},
+
+        }
+    };
+
 
     public static IEnumerable<Client> Clients =>
         new Client[]
@@ -46,7 +74,10 @@ public static class Config
                 },
 
                 // scopes that client has access to
-                AllowedScopes = { "api1" }
+                AllowedScopes = { "api1" },
+                Claims=new [] { new ClientClaim() {
+
+                } },
             },
             // interactive ASP.NET Core Web App
             new Client
@@ -70,9 +101,19 @@ public static class Config
                     IdentityServerConstants.StandardScopes.Profile,
                     "verification",
                     "api1",
-                    "color"
-                }
+                    //"color"
+                },
+                AccessTokenLifetime=20
             }
         };
+
+    public static IEnumerable<Duende.IdentityServer.EntityFramework.Entities.IdentityProvider> IdentityProviders =>
+    new Duende.IdentityServer.EntityFramework.Entities.IdentityProvider[]
+    {
+            new Duende.IdentityServer.EntityFramework.Entities.IdentityProvider()
+            {
+                DisplayName="Facebook",
+            },
+    };
 }
 
