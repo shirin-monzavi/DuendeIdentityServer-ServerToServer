@@ -5,9 +5,13 @@ This project is a simple implementation of Duende Identity Server, leveraging Op
 
 ## 🎯 Features
 This implementation includes the following examples:
+
 ✅ Server-to-server authentication
+
 ✅ Interactive user authentication
+
 ✅ Configuration from a database (instead of in-memory storage)
+
 ✅ Integration with ASP.NET Core Identity
 
 ## 🛠️ Technologies Used
