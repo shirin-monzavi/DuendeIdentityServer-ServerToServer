@@ -10,7 +10,7 @@ This implementation includes the following examples:
 ✅ Configuration from a database (instead of in-memory storage)
 ✅ Integration with ASP.NET Core Identity
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 C#
 
 .NET Framework 6.0
@@ -18,5 +18,5 @@ C#
 ## 🤝 Contributing
 Feel free to fork the repository, submit pull requests, or open issues for improvements and discussions.
 
-All of examples are written according to https://docs.duendesoftware.com/identityserver/v7/quickstarts/ address.
+✅ All of examples are written according to https://docs.duendesoftware.com/identityserver/v7/quickstarts/ address.
    
