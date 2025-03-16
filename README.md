@@ -17,7 +17,7 @@ This implementation includes the following examples:
 ## 🛠️ Technologies Used
 C#
 
-.NET Framework 6.0
+.NET Framework 7.0
 
 ## 🤝 Contributing
 Feel free to fork the repository, submit pull requests, or open issues for improvements and discussions.
