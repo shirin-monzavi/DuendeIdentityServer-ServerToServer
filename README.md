@@ -1,9 +1,22 @@
-This is A simple implementation of Duende Identity server which uses OpenID Connect and OAuth 2.0 protocl in order to does authentication and authorization.
-this project contains the following samples: 
-1. server to server
-2. interactive user
-3. read config from database over in memory data.
-4. integrate with asp.net core identity
+# Duende Identity Server - Simple Implementation
 
-all of examples are written according to https://docs.duendesoftware.com/identityserver/v7/quickstarts/ address.
+## 📌 Overview
+This project is a simple implementation of Duende Identity Server, leveraging OpenID Connect and OAuth 2.0 for authentication and authorization.
+
+## 🎯 Features
+This implementation includes the following examples:
+✅ Server-to-server authentication
+✅ Interactive user authentication
+✅ Configuration from a database (instead of in-memory storage)
+✅ Integration with ASP.NET Core Identity
+
+🛠️ Technologies Used
+C#
+
+.NET Framework 6.0
+
+## 🤝 Contributing
+Feel free to fork the repository, submit pull requests, or open issues for improvements and discussions.
+
+All of examples are written according to https://docs.duendesoftware.com/identityserver/v7/quickstarts/ address.
    
